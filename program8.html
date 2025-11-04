@@ -136,17 +136,13 @@
             return false;
         }
         let password = document.getElementById("password").value;
-        let confirmPassword = document.getElementById("confirmPassword").value;
+       let confirmPassword = document.getElementById("confirmPassword").value;
 
-        if (password.length < 6) {
-            alert("Password must be at least 6 characters long.");
-            return false;
-        }
+       if(!/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&]).{6,}$/.test(password))
+       return alert("Password must contain one uppercase, one lowercase, one number, one special character, and be 6 characters long.");
 
-        if (password !== confirmPassword) {
-            alert("Passwords do not match. Please re-enter.");
-            return false;
-        }
+      if (password !== confirmPassword)
+      return alert("Passwords do not match. Please re-enter.");
 
         alert("Form submitted successfully!");
         return true;
